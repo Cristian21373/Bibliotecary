@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Libro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="../js/libro.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 bg-dark sidebar">
+                <div class="sidebar-heading text-light pt-3 mb-4 custom-blue">
+                    <img src="../img/Logo.png" class="mr-2" style="height: 100px;"><h1 style="font-size: 40px;">BiblioStock</h1>
+                </div>
+                <ul class="list-unstyled" style="margin-left: 30px;">
+                    <li class=""><a href="../index.html" class="text-light"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="opcion2"><a href="./Libro.html" class="text-light"><i class="fas fa-book"></i> Libros</a></li>
+                    <li><a href="#" class="text-light"><i class="fas fa-exchange-alt"></i> Prestamos</a></li>
+                    <li><a href="#" class="text-light"><i class="fas fa-shopping-bag"></i> Ventas</a></li>
+                </ul>
+            </div>
+            <div class="col-md-10">
+                <div class="container text-center mt-4">
+                    <h1>Registrar Libro</h1>
+                    <div class="container mt-4">
+                        <div class="row">
+                            <div class="col col-xl-6 col-12">
+                                <label for="Titulo" class="form-label">Titulo</label>
+                                <input type="text" class="form-control" id="Titulo" placeholder="Ingrese el Titulo del libro por favor" required>
+                            </div>
+                            <div class="col col-xl-6 col-12">
+                                <label for="Autor" class="form-label">Autor</label>
+                                <input type="text" class="form-control" id="Autor" placeholder="Ingrese el nombre del autor por favor" required>
+                            </div>
+                            <div class="col col-xl-6 col-12">
+                                <label for="Genero" class="form-label">Genero</label>
+                                <select class="form-select" id="Genero" required>
+                                    <option selected disabled>Seleccione el tipo de genero:</option>
+                                    <option value="aventura">aventura</option>
+                                    <option value="biografia">biografia</option>
+                                    <option value="ciencia_ficcion">ciencia ficcion</option>
+                                    <option value="crimen">crimen</option>
+                                    <option value="drama">drama</option>
+                                    <option value="ensayo">ensayo</option>
+                                    <option value="fantasia">fantasia</option>
+                                    <option value="historico">historico</option>
+                                    <option value="humor">humor</option>
+                                    <option value="infantil">infantil</option>
+                                    <option value="juvenil">juvenil</option>
+                                    <option value="misterio">misterio</option>
+                                    <option value="novela_negra">novela negra</option>
+                                    <option value="poesia">poesia</option>
+                                    <option value="romance">romance</option>
+                                    <option value="suspense">suspense</option>
+                                    <option value="terror">terror</option>
+                                    <option value="thriller">thriller</option>
+                                    <option value="accion">accion</option>
+                                    <option value="amor">amor</option>
+                                    <option value="cuento">cuento</option>
+                                    <option value="didactico">didactico</option>
+                                    <option value="distopia">distopia</option>
+                                    <option value="epico">epico</option>
+                                    <option value="erotico">erotico</option>
+                                    <option value="fabula">fabula</option>
+                                    <option value="filosofico">filosofico</option>
+                                    <option value="guerra">guerra</option>
+                                    <option value="legal">legal</option>
+                                    <option value="lirico">lirico</option>
+                                    <option value="musical">musical</option>
+                                    <option value="naturalista">naturalista</option>
+                                    <option value="periodistico">periodistico</option>
+                                    <option value="psicologico">psicologico</option>
+                                    <option value="realista">realista</option>
+                                </select>
+                            </div>
+                            <div class="col col-xl-6 col-12">
+                                <label for="Isbn" class="form-label">Identificador único (Isbn)</label>
+                                <input type="number" class="form-control" id="Isbn" placeholder="Ingrese el Isbn" required>
+                            </div>
+                            <div class="col col-xl-6 col-12">
+                                <label for="Cant_Dis" class="form-label">Número de ejemplares disponibles</label>
+                                <input type="number" class="form-control" id="Cant_Dis" placeholder="Ingrese el número de ejemplares disponibles" required>
+                            </div>
+                            <div class="col col-xl-6 col-12">
+                                <label for="Cant_Ocup" class="form-label">Número de ejemplares ocupados</label>
+                                <input type="number" class="form-control" id="Cant_Ocup" placeholder="Ingrese la número de ejemplares ocupados" required>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="posicion-btn">
+                            <button class="btn btn-success" onClick="registrarLibro()">Registrar libro</button>
+                            <button class="btn btn-secondary" onClick="limpiarFormulario()">Limpiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
