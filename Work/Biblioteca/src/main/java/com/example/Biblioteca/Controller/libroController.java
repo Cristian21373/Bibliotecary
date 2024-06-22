@@ -106,7 +106,7 @@ public class libroController {
 	        libroService.save(libro);
 	        return new ResponseEntity<>("Guardado", HttpStatus.OK);
 	    } else {
-	        return new ResponseEntity<>("Error: user no encontrado", HttpStatus.BAD_REQUEST);
+	        return new ResponseEntity<>("Error: libro no encontrado", HttpStatus.BAD_REQUEST);
 	    }
 	}
 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Libro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="../js/usuario.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 bg-dark sidebar">
+                <div class="sidebar-heading text-light pt-3 mb-4 custom-blue">
+                    <img src="../img/Logo.png" class="mr-2" style="height: 100px;"><h1 style="font-size: 40px;">BiblioStock</h1>
+                </div>
+                <ul class="list-unstyled" style="margin-left: 30px;">
+                    <li class=""><a href="../index.html" class="text-light"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="opcion2"><a href="./Libro.html" class="text-light"><i class="fas fa-book"></i> Libros</a></li>
+                    <li><a href="#" class="text-light"><i class="fas fa-exchange-alt"></i> Prestamos</a></li>
+                    <li><a href="#" class="text-light"><i class="fas fa-shopping-bag"></i> Ventas</a></li>
+                    <li><a href="#" class="text-light"><i class="fas fa-shopping-bag"></i> Usuario</a></li>
+                </ul>
+            </div>
+            <div class="col-md-10">
+                <div class="container text-center mt-4">
+                    <h1>Registrar Libro</h1>
+                    <div class="container mt-4">
+                        <div class="row">
+                            <div class="col col-xl-6 col-12">
+                                <label for="Nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="Nombre" placeholder="Ingrese el nombre del usuario" required>
+                            </div>
+                            <div class="col col-xl-6 col-12">
+                                <label for="Direccion" class="form-label">Direccion</label>
+                                <input type="text" class="form-control" id="Direccion" placeholder="Ingrese La direccion" required>
+                            </div>
+                            <div class="col col-xl-6 col-12">
+                                <label for="Correo_electronico" class="form-label">Correo electronico</label>
+                                <input type="email" class="form-control" id="Correo_electronico" placeholder="Ingrese el correo electronico" required>
+                            </div>
+                            <div class="col col-xl-6 col-12">
+                                <label for="Tipo_usuario" class="form-label">Tipo de usuario</label>
+                                <select class="form-select" id="Tipo_usuario" required>
+                                    <option selected disabled>Seleccione el tipo de usuario:</option>
+                                    <option value="lector">Lector</option>
+                                    <option value="bibliotecario">Bibliotecario</option>
+                                    <option value="administrador">Administrador</option>
+                                </select>
+                           
+                        <br>
+                        <div class="posicion-btn-user">
+                            <button class="btn btn-success" onClick="registrarUsuario()">Registrar usuario</button>
+                            <button class="btn btn-secondary" onClick="limpiarFormulario()">Limpiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
