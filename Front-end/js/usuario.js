@@ -4,7 +4,7 @@ function listaUsuario() {
     var capturarFiltro = document.getElementById("SearchName").value;
     var urlLocal = url;
     if (capturarFiltro !== "") {
-        urlLocal += "busquedafiltro/" + capturarFiltro;
+        urlLocal += "busquedafiltro/" + filtroUsuario;
     }
 
     $.ajax({
@@ -93,6 +93,107 @@ function listaUsuario() {
         }
     });
 }
+
+
+function registrarUsuario() {
+    let nombre = document.getElementById("Nombre").value;
+    let direccion = document.getElementById("Direccion").value;
+    let correo_electronico = document.getElementById("Correo_electronico").value;
+    let tipo_usuario = document.getElementById("Tipo_usuario").value;
+
+
+    // Validación para comprobar si todos los campos están vacíos
+    // if (titulo === "" && autor === "" && genero === "Seleccione el tipo de genero:" && isbn === "" && cant_Dis === "" && cant_Ocup === "") {
+    //     Swal.fire({
+    //         title: "Error",
+    //         text: "Por favor, rellene todos los campos.",
+    //         icon: "error"
+    //     });
+    //     return;
+    // }
+
+    // // Validaciones individuales de cada campo
+    // if (titulo === "") {
+    //     Swal.fire({
+    //         title: "Error",
+    //         text: "Por favor, ingrese el título del libro.",
+    //         icon: "error"
+    //     });
+    //     return;
+    // }
+    // if (autor === "") {
+    //     Swal.fire({
+    //         title: "Error",
+    //         text: "Por favor, ingrese el autor del libro.",
+    //         icon: "error"
+    //     });
+    //     return;
+    // }
+    // if (genero === "Seleccione el tipo de genero:") {
+    //     Swal.fire({
+    //         title: "Error",
+    //         text: "Por favor, seleccione un género.",
+    //         icon: "error"
+    //     });
+    //     return;
+    // }
+    // if (isbn === "" || isNaN(isbn) || parseInt(isbn) < 0) {
+    //     Swal.fire({
+    //         title: "Error",
+    //         text: "Por favor, ingrese un número válido de ISBN que no sea negativo.",
+    //         icon: "error"
+    //     });
+    //     return;
+    // }
+    // if (cant_Dis === "" || isNaN(cant_Dis) || parseInt(cant_Dis) < 0) {
+    //     Swal.fire({
+    //         title: "Error",
+    //         text: "Por favor, ingrese un número válido de ejemplares disponibles que no sea negativo.",
+    //         icon: "error"
+    //     });
+    //     return;
+    // }
+    // if (cant_Ocup === "" || isNaN(cant_Ocup) || parseInt(cant_Ocup) < 0) {
+    //     Swal.fire({
+    //         title: "Error",
+    //         text: "Por favor, ingrese un número válido de ejemplares ocupados que no sea negativo.",
+    //         icon: "error"
+    //     });
+    //     return;
+    // }
+
+    // Datos del formulario
+    let formData = {
+        "nombre": nombre,
+        "direccion": direccion,
+        "correo_electronico": correo_electronico,
+        "tipo_usuario": tipo_usuario
+    };
+
+    $.ajax({
+        url: url,
+        type: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(formData),
+        success: function (result) {
+            Swal.fire({
+                title: "¡Excelente!",
+                text: "Se guardó correctamente",
+                icon: "success"
+            });
+            limpiarFormulario();
+        },
+        error: function (error) {
+            Swal.fire({
+                title: "Error",
+                text: "Error al guardar el usuario",
+                icon: "error"
+            });
+        }
+    });
+}
+
+
 
 function eliminarUsuario(id_usuario) {
     $.ajax({

@@ -43,7 +43,7 @@ function listaLibro() {
                 botonActualizarLibro.innerText = "Actualizar";
                 botonActualizarLibro.className = "btn btn-warning actualizar_Libro";
                 botonActualizarLibro.onclick = function () {
-                    $('#exampleModal').modal('show');
+                    $('#modalLibro').modal('show');
                     consultarLibroID(libro.id_libro);
                 };
 
@@ -151,15 +151,16 @@ function actualizarLibro(idLibro) {
 
     $.ajax({
         url: url + idLibro,
-        type: "PUT",
-        data: formData,
+        type: "PUT", // Change the HTTP method to POST
+        data: JSON.stringify(formData),
+        contentType: "application/json",
         success: function (result) {
             Swal.fire({
                 title: "¡Actualizado!",
                 text: "El libro ha sido actualizado correctamente.",
                 icon: "success"
             });
-            $('#exampleModal').modal('hide');
+            $('#modalLibro').modal('hide');
             listaLibro();
         },
         error: function (error) {
@@ -305,4 +306,21 @@ function limpiarFormulario() {
     document.getElementById("Isbn").value = "";
     document.getElementById("Cant_Dis").value = "";
     document.getElementById("Cant_Ocup").value = "";
+}
+
+
+function mostrarDetallesLibro(libro) {
+    Swal.fire({
+        title: 'Detalles del Libro',
+        html: `
+            <p><strong>ID Libro:</strong> ${libro.id_libro}</p>
+            <p><strong>Título:</strong> ${libro.titulo}</p>
+            <p><strong>Autor:</strong> ${libro.autor}</p>
+            <p><strong>Género:</strong> ${libro.genero}</p>
+            <p><strong>ISBN:</strong> ${libro.isbn}</p>
+            <p><strong>Cantidad Disponible:</strong> ${libro.cant_Dis}</p>
+            <p><strong>Cantidad Ocupada:</strong> ${libro.cant_Ocup}</p>
+        `,
+        icon: 'info'
+    });
 }

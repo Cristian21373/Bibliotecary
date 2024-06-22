@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -92,7 +93,7 @@ public class libroController {
         libroService.deleteById(id_libro);
         return new ResponseEntity<>("Registro Eliminado", HttpStatus.OK);
     }
-
+	@PutMapping("/{id_libro}")
     public ResponseEntity<Object> update(@PathVariable("id_libro") String id_libro, @RequestBody libro libroUpdate){
 	    var libro = libroService.findById(id_libro).orElse(null);
 	    if (libro != null) {

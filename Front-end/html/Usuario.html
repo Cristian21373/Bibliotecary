@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/usuario.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -13,14 +18,15 @@
         <div class="row">
             <div class="col-md-2 bg-dark sidebar">
                 <div class="sidebar-heading text-light pt-3 mb-4 custom-blue">
-                    <img src="/Front-end/img/Logo.png" class="mr-2" style="height: 100px;"><h1 style="font-size: 40px;">BiblioStock</h1>
+                    <img src="/Front-end/img/Logo.png" class="mr-2" style="height: 100px;">
+                    <h1 style="font-size: 40px;">BiblioStock</h1>
                 </div>
                 <ul class="list-unstyled" style="margin-left: 30px;">
-                    <li class=""><a href="../index.html" class="text-light"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li class="opcion2"><a href="#" class="text-light"><i class="fas fa-book"></i> Libros</a></li>
+                    <li><a href="../index.html" class="text-light"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="../html/Libro.html" class="text-light"><i class="fas fa-book"></i> Libros</a></li>
                     <li><a href="#" class="text-light"><i class="fas fa-exchange-alt"></i> Prestamos</a></li>
                     <li><a href="#" class="text-light"><i class="fas fa-shopping-bag"></i> Ventas</a></li>
-                    <li><a href="#" class="text-light"><i class="fas fa-shopping-bag"></i> Usuario</a></li>
+                    <li class="opcion3"><a href="../html/Usuario.html" class="text-light"><i class="fas fa-shopping-bag"></i> Usuario</a></li>
                 </ul>
             </div>
             <div class="col-md-10">
@@ -31,15 +37,13 @@
                             <label for="SearchName">Filtrar por Nombre:</label>
                             <input type="search" class="form-control" id="SearchName" placeholder="Ingrese el nombre">
                         </div>
-                        
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="SearchIsbn">Filtrar por correo electronico:</label>
-                            <input type="search" class="form-control" id="SearchIsbn" placeholder="Ingrese el correo">
+                            <label for="SearchEmail">Filtrar por Correo Electrónico:</label>
+                            <input type="search" class="form-control" id="SearchEmail" placeholder="Ingrese el correo electrónico">
                         </div>
                     </div>
-                
                 </div>
                 <div class="row">
                     <div class="col-md-4">
@@ -65,7 +69,7 @@
                                 </tr>
                             </thead>
                             <tbody id="cuerpoTabla">
-                                
+                                <!-- Los datos de la tabla se llenarán aquí -->
                             </tbody>
                         </table>
                     </div>
@@ -99,7 +103,12 @@
                         </div>
                         <div class="mb-3">
                             <label for="editTipo_usuario" class="form-label">Tipo de usuario</label>
-                            <input type="text" class="form-control" id="editTipo_usuario" required>
+                            <select class="form-control" id="editTipo_usuario" required>
+                                <option selected disabled>Seleccione el tipo de usuario:</option>
+                                <option value="lector">Lector</option>
+                                <option value="bibliotecario">Bibliotecario</option>
+                                <option value="administrador">Administrador</option>
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Guardar cambios</button>
                     </form>
@@ -108,10 +117,5 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../js/usuario.js"></script>
 </body>
 </html>
