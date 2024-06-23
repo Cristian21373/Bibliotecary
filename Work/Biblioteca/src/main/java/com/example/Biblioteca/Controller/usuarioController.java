@@ -28,6 +28,7 @@ public class usuarioController {
 
     @PostMapping("/")
     public ResponseEntity<Object> save(@RequestBody usuario usuario) {
+    	
         
         if (usuario.getNombre().equals("")) {
 

@@ -102,66 +102,24 @@ function registrarUsuario() {
     let tipo_usuario = document.getElementById("Tipo_usuario").value;
 
 
-    // Validación para comprobar si todos los campos están vacíos
-    // if (titulo === "" && autor === "" && genero === "Seleccione el tipo de genero:" && isbn === "" && cant_Dis === "" && cant_Ocup === "") {
-    //     Swal.fire({
-    //         title: "Error",
-    //         text: "Por favor, rellene todos los campos.",
-    //         icon: "error"
-    //     });
-    //     return;
-    // }
-
-    // // Validaciones individuales de cada campo
-    // if (titulo === "") {
-    //     Swal.fire({
-    //         title: "Error",
-    //         text: "Por favor, ingrese el título del libro.",
-    //         icon: "error"
-    //     });
-    //     return;
-    // }
-    // if (autor === "") {
-    //     Swal.fire({
-    //         title: "Error",
-    //         text: "Por favor, ingrese el autor del libro.",
-    //         icon: "error"
-    //     });
-    //     return;
-    // }
-    // if (genero === "Seleccione el tipo de genero:") {
-    //     Swal.fire({
-    //         title: "Error",
-    //         text: "Por favor, seleccione un género.",
-    //         icon: "error"
-    //     });
-    //     return;
-    // }
-    // if (isbn === "" || isNaN(isbn) || parseInt(isbn) < 0) {
-    //     Swal.fire({
-    //         title: "Error",
-    //         text: "Por favor, ingrese un número válido de ISBN que no sea negativo.",
-    //         icon: "error"
-    //     });
-    //     return;
-    // }
-    // if (cant_Dis === "" || isNaN(cant_Dis) || parseInt(cant_Dis) < 0) {
-    //     Swal.fire({
-    //         title: "Error",
-    //         text: "Por favor, ingrese un número válido de ejemplares disponibles que no sea negativo.",
-    //         icon: "error"
-    //     });
-    //     return;
-    // }
-    // if (cant_Ocup === "" || isNaN(cant_Ocup) || parseInt(cant_Ocup) < 0) {
-    //     Swal.fire({
-    //         title: "Error",
-    //         text: "Por favor, ingrese un número válido de ejemplares ocupados que no sea negativo.",
-    //         icon: "error"
-    //     });
-    //     return;
-    // }
-
+     // Validación para comprobar si todos los campos están llenos
+     if (nombre === "" || direccion === "" || correo_electronico === "" || tipo_usuario === "") {
+        Swal.fire({
+            title: "Error",
+            text: "Por favor, rellene todos los campos.",
+            icon: "error"
+        });
+        return;
+    }
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(correo_electronico)) {
+        Swal.fire({
+            title: "Error",
+            text: "Por favor, ingrese un correo electrónico válido.",
+            icon: "error"
+        });
+        return;
+    }
     // Datos del formulario
     let formData = {
         "nombre": nombre,
