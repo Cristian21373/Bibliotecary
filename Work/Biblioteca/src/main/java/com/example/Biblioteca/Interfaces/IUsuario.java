@@ -16,7 +16,6 @@ public interface IUsuario extends CrudRepository<usuario,String>{
 	
 	@Query("SELECT us FROM usuario us WHERE "
             + "us.Nombre LIKE %?1% OR "
-            + "us.Direccion LIKE %?1% OR "
             + "us.Correo_electronico LIKE %?1% OR "
             + "us.Tipo_usuario LIKE %?1%")
     List<usuario>filtroUsuario(String filtro);
