@@ -198,6 +198,7 @@ function eliminarLibro(idLibro) {
     });
 }
 
+
 function registrarLibro() {
     let titulo = document.getElementById("Titulo").value;
     let autor = document.getElementById("Autor").value;
@@ -266,6 +267,7 @@ function registrarLibro() {
         return;
     }
 
+
     // Datos del formulario
     let formData = {
         "titulo": titulo,
@@ -298,6 +300,12 @@ function registrarLibro() {
         }
     });
 }
+
+
+
+
+
+
 
 function limpiarFormulario() {
     document.getElementById("Titulo").value = "";
