@@ -15,8 +15,11 @@ import com.android.volley.toolbox.JsonRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.crudlibrary.config.config
+import com.example.crudlibrary.models.libro
+import com.google.gson.Gson
 //import com.google.gson.JsonObject //Genera error
 import org.json.JSONObject
+import java.lang.reflect.Method
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,8 +49,47 @@ class guardarLibro : Fragment() {
     private lateinit var txt_cod_isbn:EditText
     private lateinit var txt_cant_dis:EditText
     private lateinit var txt_cant_ocup:EditText
-    private var id:String=""
+
     private lateinit var btnGuardar:Button
+
+
+    private  var id:String=""
+
+    /*
+    Ejemplo de una petición que recibe un String
+    * Request es peticion que hace a la API
+    * StringRequest=responde
+    * Un StringRequest=responde un json
+    * JsonArrayRequest=Responde un arreglo de json*/
+
+    fun consultarLibro(){
+        /*Solo se debe consultar si el ID es diferente a vacio*/
+        if (id!=""){
+            var request=JsonObjectRequest(
+                Method.GET,
+                config.urlLibro+id,
+                null,
+                {response ->
+                    //la variable responde contiene la respuesta de la API
+                    //Se convierte de un json a un objeto tipo libro
+                    val gson= Gson()
+                    //se convierte
+                    val libro: libro =gson.fromJson(response.toString(),libro::class.java)
+                    //se modific el atributo text de los campos con el valor de objeto
+                    txt_autor.setText(libro.Autor)
+                },
+                { error -> Toast.makeText(context,
+                    "Error al consultar",
+                    Toast.LENGTH_LONG).show()
+                }
+            )
+            var queue=Volley.newRequestQueue(context)
+            queue.add(request)
+        }
+
+    }
+
+
 
     fun guardarLibro(){
         try {
@@ -141,7 +183,7 @@ class guardarLibro : Fragment() {
         btnGuardar = view.findViewById(R.id.btnGuardar)
         btnGuardar.setOnClickListener {
             guardarLibro() }
-
+    consultarLibro();
     return view
 
     }

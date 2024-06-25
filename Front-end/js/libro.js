@@ -1,5 +1,54 @@
 var url = "http://localhost:8080/api/v1/libro/";
 
+
+document.getElementById("Titulo").addEventListener("keypress", validarTecla);
+document.getElementById("Autor").addEventListener("keypress", validarTecla);
+document.getElementById("Isbn").addEventListener("keypress", validarTeclaNum);
+document.getElementById("Cant_Dis").addEventListener("keypress", validarTeclaNum);
+document.getElementById("Cant_Ocup").addEventListener("keypress", validarTeclaNum);
+
+// Este método solo permite letras
+const letrasPermitidas = [
+    'A', 'Á', 'B', 'C', 'D', 'E', 'É', 'F', 'G', 'H', 'I', 'Í', 'J', 'K', 'L', 'M', 
+    'N', 'Ñ', 'O', 'Ó', 'P', 'Q', 'R', 'S', 'T', 'U', 'Ú', 'Ü', 'V', 'W', 'X', 'Y', 'Z',
+    'a', 'á', 'b', 'c', 'd', 'e', 'é', 'f', 'g', 'h', 'i', 'í', 'j', 'k', 'l', 'm',
+    'n', 'ñ', 'o', 'ó', 'p', 'q', 'r', 's', 't', 'u', 'ú', 'ü', 'v', 'w', 'x', 'y', 'z', ' '
+];
+
+const numerosPermitidos = [
+    '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'
+];
+
+const signosPermitidos = [
+    '.', ',', '@'
+];
+//Autor y titulo
+function validarTecla(event) {
+    console.log("Llave presionada: " + event.key);
+    console.log("Código tecla: " + event.keyCode);
+    const key = event.key;
+    if (!letrasPermitidas.includes(key) && !signosPermitidos.includes(key)) {
+        event.preventDefault();
+    }
+}
+
+//Isbn, Ejemplares disponibles y ocupados
+function validarTeclaNum(event) {
+    console.log("Llave presionada: " + event.key);
+    console.log("Código tecla: " + event.keyCode);
+    const key = event.key;
+    if (!numerosPermitidos.includes(key)) {
+        event.preventDefault();
+    }
+}
+
+
+
+
+
+
+
+
 function listaLibro() {
     var capturarFiltro = document.getElementById("SearchName").value;
     var urlLocal = url;
@@ -11,10 +60,10 @@ function listaLibro() {
         url: urlLocal,
         type: "GET",
         success: function (result) {
-            console.log(result); 
+            console.log(result);
 
             var cuerpoTabla = document.getElementById("cuerpoTabla");
-            cuerpoTabla.innerHTML = ""; 
+            cuerpoTabla.innerHTML = "";
 
             result.forEach(function (libro) {
                 var trRegistro = document.createElement("tr");
@@ -143,7 +192,7 @@ function actualizarLibro(idLibro) {
     var formData = {
         "titulo": titulo,
         "autor": autor,
-        "genero": genero, 
+        "genero": genero,
         "isbn": isbn,
         "cant_Dis": cant_Dis,
         "cant_Ocup": cant_Ocup
@@ -180,7 +229,7 @@ function eliminarLibro(idLibro) {
         url: url + idLibro,
         type: "DELETE",
         success: function (result) {
-            listaLibro(); 
+            listaLibro();
             Swal.fire({
                 title: "¡Eliminado!",
                 text: "El libro ha sido eliminado correctamente.",
@@ -332,3 +381,6 @@ function mostrarDetallesLibro(libro) {
         icon: 'info'
     });
 }
+
+
+
