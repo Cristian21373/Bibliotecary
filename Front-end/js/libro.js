@@ -384,3 +384,7 @@ function mostrarDetallesLibro(libro) {
 
 
 
+function limpiarFiltros() {
+    document.getElementById("SearchName").value = "";
+    listaLibro();
+}
