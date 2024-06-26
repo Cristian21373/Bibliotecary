@@ -81,6 +81,7 @@
 .posicion-btn {
   text-align: center;
   margin-top: 20px;
+  margin-bottom: 18px;
 }
 
 .posicion-btn-user {
@@ -89,3 +90,18 @@
   margin-left: -35em;
 } 
 
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+.col-md-4{
+  margin-bottom: 10px;
+}
+
+
+.align-items-center {
+  -ms-flex-align: end !important;
+  align-items: center;
+  margin-top: 16px;
+}

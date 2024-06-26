@@ -233,6 +233,8 @@ function limpiarFiltros() {
     listaUsuario();
 }
 
+
+
 function mostrarDetallesUsuario(usuario) {
     Swal.fire({
         title: 'Detalles del Usuario',
