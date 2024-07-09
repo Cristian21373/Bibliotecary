@@ -9,7 +9,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
-        android:name="com.example.crudlibrary.guardarLibro"
+        android:name="com.example.crudlibrary.detalleLibro"
         android:layout_width="410dp"
         android:layout_height="738dp"
         app:layout_constraintBottom_toBottomOf="parent"
