@@ -9,7 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class libro {
+public class libro { 
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
