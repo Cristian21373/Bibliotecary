@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.android.volley.Request
+import com.android.volley.Request.Method
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.JsonRequest
@@ -19,7 +20,7 @@ import com.example.crudlibrary.models.libro
 import com.google.gson.Gson
 //import com.google.gson.JsonObject //Genera error
 import org.json.JSONObject
-import java.lang.reflect.Method
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -76,7 +77,13 @@ class guardarLibro : Fragment() {
                     //se convierte
                     val libro: libro =gson.fromJson(response.toString(),libro::class.java)
                     //se modific el atributo text de los campos con el valor de objeto
-                    txt_autor.setText(libro.Autor)
+                    txt_autor.setText(response.getString("Autor"))
+                    txt_titulo.setText(response.getString("Titulo"))
+                    txt_genero.setText(response.getString("Genero"))
+                    txt_cod_isbn.setText(response.getString("Isbn"))
+                    txt_cant_dis.setText(response.getString("Cant_Dis"))
+                    txt_cant_ocup.setText(response.getString("Cant_Ocup"))
+
                 },
                 { error -> Toast.makeText(context,
                     "Error al consultar",
@@ -94,6 +101,8 @@ class guardarLibro : Fragment() {
     fun guardarLibro(){
         try {
             if (id=="") {
+
+
                 //se crea la petición  de crear libro
                 /*val request = object : StringRequest(
                     Request.Method.POST, //El metodo de la peticion
@@ -121,7 +130,7 @@ class guardarLibro : Fragment() {
                         return parametros
                     }
                 }*/
-                var parametros=JSONObject()
+                val parametros=JSONObject()
                 parametros.put("titulo",txt_titulo.text.toString())
                 parametros.put("autor",txt_autor.text.toString())
                 parametros.put("genero",txt_genero.text.toString())
