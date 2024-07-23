@@ -10,10 +10,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Request.Method
-import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.JsonRequest
-import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.crudlibrary.config.config
 import com.example.crudlibrary.models.libro
@@ -189,7 +186,7 @@ class guardarLibro : Fragment() {
         txt_cod_isbn = view.findViewById(R.id.txt_cod_isbn)
         txt_cant_dis = view.findViewById(R.id.txt_cant_disp)
         txt_cant_ocup = view.findViewById(R.id.txt_cant_ocup)
-        btnGuardar = view.findViewById(R.id.btnGuardar)
+        btnGuardar = view.findViewById(R.id.btnEliminar)
         btnGuardar.setOnClickListener {
             guardarLibro() }
     consultarLibro();

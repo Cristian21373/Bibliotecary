@@ -15,7 +15,7 @@
 
 
         <TextView
-            android:id="@+id/textTitulo"
+            android:id="@+id/lbltitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/lblTitulo" />
@@ -28,7 +28,7 @@
             android:inputType="text" />
 
         <TextView
-            android:id="@+id/textAutor"
+            android:id="@+id/lblautor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/lblAutor" />
@@ -41,7 +41,7 @@
             android:inputType="text" />
 
         <TextView
-            android:id="@+id/textGenero"
+            android:id="@+id/lblgenero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/lblGenero" />
@@ -54,7 +54,7 @@
             android:inputType="text" />
 
         <TextView
-            android:id="@+id/textCodISBN"
+            android:id="@+id/lblcod_isbn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/lblCodigoISBN" />
@@ -67,7 +67,7 @@
             android:inputType="text" />
 
         <TextView
-            android:id="@+id/textLibrosDisponibles"
+            android:id="@+id/lblcant_dis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/lblLibrosDisponibles" />
@@ -80,7 +80,7 @@
             android:inputType="text" />
 
         <TextView
-            android:id="@+id/textLibrosOCupados"
+            android:id="@+id/lblcant_ocup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/lblLibrosOcupados" />
@@ -98,14 +98,14 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/btnEditar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/btnVolver" />
 
             <Button
-                android:id="@+id/btnGuardar"
+                android:id="@+id/btnEliminar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

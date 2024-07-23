@@ -33,6 +33,18 @@ class detalleLibro : Fragment() {
 
 
 
+
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            param1 = it.getString(ARG_PARAM1)
+            param2 = it.getString(ARG_PARAM2)
+        }
+
+    }
     private lateinit var lbltitulo: TextView
     private lateinit var lblautor: TextView
     private lateinit var lblgenero: TextView
@@ -44,17 +56,7 @@ class detalleLibro : Fragment() {
     private lateinit var btnEliminar:Button
 
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-
-
-    private  var id:String=""
+    private  var id:String="66e6b06f-c4df-435b-baca-8c40e2c4bb5d"
 
     /*
     Ejemplo de una petición que recibe un String
@@ -77,12 +79,12 @@ class detalleLibro : Fragment() {
                     //se convierte
                     val libro: libro =gson.fromJson(response.toString(), libro::class.java)
                     //se modific el atributo text de los campos con el valor de objeto
-                    lblautor.setText(response.getString("Autor"))
-                    lbltitulo.setText(response.getString("Titulo"))
-                    lblgenero.setText(response.getString("Genero"))
-                    lblcod_isbn.setText(response.getString("Isbn"))
-                    lblcant_dis.setText(response.getString("Cant_Dis"))
-                    lblcant_ocup.setText(response.getString("Cant_Ocup"))
+                    lbltitulo.setText(response.getString("titulo"))
+                    lblautor.setText(response.getString("autor"))
+                    lblgenero.setText(response.getString("genero"))
+                    lblcod_isbn.setText(response.getString("isbn"))
+                    lblcant_dis.setText(response.getString("cant_Dis"))
+                    lblcant_ocup.setText(response.getString("cant_Ocup"))
 
                 },
                 { error -> Toast.makeText(context,
@@ -109,7 +111,7 @@ class detalleLibro : Fragment() {
         lblautor = view.findViewById(R.id.lblautor)
         lblgenero = view.findViewById(R.id.lblgenero)
         lblcod_isbn = view.findViewById(R.id.lblcod_isbn)
-        lblcant_dis = view.findViewById(R.id.lblcant_disp)
+        lblcant_dis = view.findViewById(R.id.lblcant_dis)
         lblcant_ocup = view.findViewById(R.id.lblcant_ocup)
 
         btnEditar = view.findViewById(R.id.btnEditar)
