@@ -10,4 +10,5 @@
     <string name="lblLibrosOcupados">Libros Ocupados</string>
     <string name="btnGuardar">Guardar</string>
     <string name="btnVolver">Volver</string>
+    <string name="bibliostock">BiblioStock</string>
 </resources>

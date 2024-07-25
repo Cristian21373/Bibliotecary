@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".guardarLibro">
+    tools:context=".detalleLibro">
 
     <!-- TODO: Update blank fragment layout -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="20dp">
 
 
         <TextView
@@ -21,13 +21,11 @@
             android:text="@string/lblTitulo" />
 
 
-
         <TextView
             android:id="@+id/lblautor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/lblAutor" />
-
 
 
         <TextView
@@ -37,13 +35,11 @@
             android:text="@string/lblGenero" />
 
 
-
         <TextView
             android:id="@+id/lblcod_isbn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/lblCodigoISBN" />
-
 
 
         <TextView
@@ -53,13 +49,11 @@
             android:text="@string/lblLibrosDisponibles" />
 
 
-
         <TextView
             android:id="@+id/lblcant_ocup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/lblLibrosOcupados" />
-
 
 
         <LinearLayout

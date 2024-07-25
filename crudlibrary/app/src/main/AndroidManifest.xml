@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
     <!--Se solicita permiso para acceder al internet-->
     <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
