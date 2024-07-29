@@ -7,9 +7,6 @@
 body, html {
     height: 100%;
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
 }
 
 .header {
@@ -18,39 +15,83 @@ body, html {
     align-items: center;
     width: 100%;
     padding: 10px 20px;
-    background-color: #fff;
-    position: absolute;
-    z-index: 1;
+    position: absolute; /* Permitir que el menú se mueva con el contenido */
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
 }
 
 .logo {
     height: 50px;
+    margin-right: 10px; /* Espacio entre el logo y el título */
 }
 
 .title {
-    font-size: 24px;
-    margin-left: 10px;
+    font-size: 29px;
+    color: white;
+    font-weight: 200;
 }
 
 .enter-button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    border-radius: 21px;
+    border: none;
+    background: #4467ca;
+}
+
+.enter-button a {
+    color: white;
+    text-decoration: none;
 }
 
 .image-container {
-    flex: 1;
     width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
+    height: 100vh; /* Cubrir toda la altura de la pantalla */
+    position: relative;
     overflow: hidden;
 }
 
 .main-image {
     width: 100%;
     height: 100%;
-    filter: none; /* para asegurar que la imagen no tenga efectos de suavizado */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0;
+    background-color: white; /* Fondo blanco */
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+}
+
+.feature img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.feature h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 16px;
+    color: #555;
 }
