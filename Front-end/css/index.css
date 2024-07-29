@@ -81,18 +81,18 @@ body, html {
 }
 
 .description {
-    padding: 72px 20px;
+    padding: 95px 20px;
     text-align: center;
     background-color: white;
 }
 
 .description h2 {
-    font-size: 24px;
+    font-size: 26px;
     margin-bottom: 10px;
 }
 
 .description p {
-    font-size: 21px;
+    font-size: 23px;
     color: #555;
     max-width: 800px;
     margin: 0 auto;
@@ -112,17 +112,21 @@ body, html {
 }
 
 .feature img {
-    width: 80px;
-    height: 80px;
+    width: 113px;
+    height: 114px;
     margin-bottom: 20px;
 }
 
 .feature h2 {
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: 10px;
 }
 
 .feature p {
-    font-size: 16px;
+    font-size: 17px;
     color: #555;
+}
+
+.titulo h1{
+    text-align: center;
 }
