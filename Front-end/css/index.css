@@ -15,7 +15,7 @@ body, html {
     align-items: center;
     width: 100%;
     padding: 10px 20px;
-    position: absolute; /* Permitir que el menú se mueva con el contenido */
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 2;
@@ -28,7 +28,7 @@ body, html {
 
 .logo {
     height: 50px;
-    margin-right: 10px; /* Espacio entre el logo y el título */
+    margin-right: 10px; 
 }
 
 .title {
@@ -44,6 +44,7 @@ body, html {
     border-radius: 21px;
     border: none;
     background: #4467ca;
+    color: white;
 }
 
 .enter-button a {
@@ -53,7 +54,7 @@ body, html {
 
 .image-container {
     width: 100%;
-    height: 100vh; /* Cubrir toda la altura de la pantalla */
+    height: 100vh; 
     position: relative;
     overflow: hidden;
 }
@@ -61,10 +62,40 @@ body, html {
 .main-image {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra el contenedor */
+    object-fit: cover; 
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.welcome-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.description {
+    padding: 72px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.description h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.description p {
+    font-size: 21px;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .features {
@@ -72,7 +103,7 @@ body, html {
     justify-content: space-around;
     align-items: center;
     padding: 50px 0;
-    background-color: white; /* Fondo blanco */
+    background-color: white; 
 }
 
 .feature {
