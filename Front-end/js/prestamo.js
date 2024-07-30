@@ -1,5 +1,4 @@
 var url = "http://localhost:8080/api/v1/prestamo/";
-
 var urlUsuario = "http://localhost:8080/api/v1/usuario/";
 var urlLibro = "http://localhost:8080/api/v1/libro/";
 
@@ -25,7 +24,7 @@ function listaPrestamo() {
                     fila.appendChild(idPrestamo);
 
                     var libro = document.createElement("td");
-                    libro.textContent = prestamo.libro.titulo;
+                    libro.textContent = prestamo.libro.titulo; 
                     fila.appendChild(libro);
 
                     var usuario = document.createElement("td");
@@ -82,10 +81,6 @@ function listaPrestamo() {
 
 
 
-
-
-// Función para cargar la lista de usuarios
-// Función para cargar la lista de usuarios
 // Función para cargar la lista de usuarios
 function cargarListaUsuarios() {
     var usuario = document.getElementById("usuario");
@@ -193,13 +188,7 @@ function registrarPrestamo() {
     });
 }
 
-function limpiarFormulario() {
-    document.getElementById("usuario").value = "";
-    document.getElementById("libro").value = "";
-    document.getElementById("fecha_ingreso").value = "";
-    document.getElementById("fecha_maxima").value = "";
-    document.getElementById("estado").value = "";
-}
+
 
 
 
