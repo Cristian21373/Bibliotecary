@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -96,6 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="105dp"
             android:layout_marginTop="50dp"
+            android:background="#FFFFFF"
             android:orientation="horizontal">
 
             <Button
@@ -104,8 +106,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_background"
-                android:text="@string/btnVolver" /> <!-- Espacio entre los botones -->
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#F0E65151"
+                android:text="@string/btnVolver"
+                android:textColor="#ffffff"
+                app:icon="@drawable/arrow_left"
+                app:iconGravity="start"
+                app:iconPadding="8dp"
+                app:iconTint="#ffffff" />
+
 
             <Button
                 android:id="@+id/btnEliminar"
@@ -113,8 +122,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_weight="1"
-                android:background="@drawable/button_background"
-                android:text="@string/btnGuardar" />
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="#980000"
+                android:text="@string/btnGuardar"
+                android:textColor="@color/white" />
+
+
         </LinearLayout>
 
     </LinearLayout>

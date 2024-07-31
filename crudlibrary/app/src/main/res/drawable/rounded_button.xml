@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#F0E65151"/> <!-- Color de fondo -->
+            <corners android:radius="13dp"/> <!-- Radio de los bordes -->
+        </shape>
+    </item>
+</layer-list>

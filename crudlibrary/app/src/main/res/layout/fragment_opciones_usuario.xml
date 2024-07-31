@@ -4,37 +4,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F3F3F3"
-    tools:context=".opcionesLibro">
+    tools:context=".opciones_usuario">
 
     <Button
-        android:id="@+id/NuevoLibro"
+        android:id="@+id/NuevoUsuario"
         android:layout_width="149dp"
         android:layout_height="136dp"
         android:layout_marginTop="68dp"
         android:background="@drawable/rounded_button"
         android:gravity="center"
         android:paddingTop="10dp"
-        android:text="Nuevo libro"
+        android:text="Nuevo usuario"
         android:textAlignment="center"
         app:icon="@drawable/add"
         app:iconGravity="top"
         app:iconPadding="0dp"
         app:iconSize="60dp"
         app:iconTint="#ffff"
-        app:layout_constraintEnd_toStartOf="@+id/ListaLibro"
+        app:layout_constraintEnd_toStartOf="@+id/ListaUsuario"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/ListaLibro"
+        android:id="@+id/ListaUsuario"
         android:layout_width="149dp"
         android:layout_height="136dp"
         android:layout_marginTop="68dp"
         android:background="@drawable/rounded_button"
         android:gravity="center"
         android:paddingTop="10dp"
-        android:text="Lista libros"
+        android:text="Lista usuario"
         android:textAlignment="center"
         app:icon="@drawable/lista_icon"
         app:iconGravity="top"
@@ -42,7 +42,7 @@
         app:iconSize="50dp"
         app:iconTint="#ffff"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/NuevoLibro"
+        app:layout_constraintStart_toEndOf="@+id/NuevoUsuario"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
@@ -50,9 +50,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="40dp"
-        android:text="Libro"
+        android:text="Usuario"
         android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/NuevoLibro"
+        app:layout_constraintBottom_toTopOf="@+id/NuevoUsuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
