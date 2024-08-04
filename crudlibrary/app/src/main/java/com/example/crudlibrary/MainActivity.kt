@@ -23,33 +23,24 @@ class MainActivity : AppCompatActivity() {
         var btnLibro =
             findViewById<Button>(R.id.btnLibro)
 
-        var NuevoLibro =
-            findViewById<Button>(R.id.NuevoLibro)
 
         btnLibro.setOnClickListener {
             crudlibrary(1)
         }
 
-        NuevoLibro.setOnClickListener {
-            crudlibrary(2)
-        }
-
-
 
     }
-        fun crudlibrary(position:Int){
-            var fragment: Fragment
-            when(position){
-                1->fragment=opcionesLibro()
-                2->fragment=NuevoLibro()
 
-                else-> fragment = opcionesLibro()
-            }
-            val fragmentManager = supportFragmentManager
+    private fun crudlibrary(position: Int) {
+        val fragment: Fragment = when (position) {
+            1 -> guardarLibro()
 
-            val fragmentTransition = fragmentManager.beginTransaction()
-            fragmentTransition.replace(R.id.FCV,fragment)
-            fragmentTransition.commit()
+            else -> guardarLibro()
+        }
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.FCV, fragment)
+        fragmentTransaction.commit()
 
     }
 }

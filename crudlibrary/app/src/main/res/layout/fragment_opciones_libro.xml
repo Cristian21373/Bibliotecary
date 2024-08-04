@@ -7,7 +7,7 @@
     tools:context=".opcionesLibro">
 
     <Button
-        android:id="@+id/NuevoLibro"
+        android:id="@+id/btn_LibroNuevo"
         android:layout_width="149dp"
         android:layout_height="136dp"
         android:layout_marginTop="68dp"
@@ -42,7 +42,7 @@
         app:iconSize="50dp"
         app:iconTint="#ffff"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/NuevoLibro"
+        app:layout_constraintStart_toEndOf="@+id/btn_LibroNuevo"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
@@ -52,7 +52,7 @@
         android:paddingTop="40dp"
         android:text="Libro"
         android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/NuevoLibro"
+        app:layout_constraintBottom_toTopOf="@+id/btn_LibroNuevo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
